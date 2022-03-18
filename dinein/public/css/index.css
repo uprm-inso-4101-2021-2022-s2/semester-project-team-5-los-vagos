@@ -1,0 +1,20 @@
+.top{
+    text-align: center;
+}
+section.top {
+    display: grid;
+    grid-template-columns: repeat(2,50%);
+    grid-template-areas: "logo info";
+}
+.infoPara {
+    grid-area: info;
+    padding-top: 10em;
+}
+.logoImg {
+    grid-area: logo;
+}
+
+.loginArea {
+    text-align: center;
+    width: 100%;   
+}
