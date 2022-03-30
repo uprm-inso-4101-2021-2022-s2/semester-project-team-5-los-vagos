@@ -6,26 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dine In</title>
     <style>
+
+        @import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+        /* Source: Florin Pop https://codepen.io/FlorinPop17/pen/vPKWjd */
+
         .navigation_bar {
-            text-align: center;
-            
+            background-color: #ffffff;
+            margin: -8px -8px 0px -8px;
+            display: flex;
+            flex-direction: row;
+            /* align-content: center; */
+            align-items: center;
         }
-        .Recipe_Link {
-            padding-right: 20em;
-        }
-        .Blog_Link {
+        .navigation_links a {
             padding-left: 20em;
+            color: #26ab7b;
+            text-decoration: none;
+            font-family: "Montserrat", sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 1px;
         }
     </style>
 </head>
 <body>
     <div class="navigation_bar">
-        <a href="/index.ejs"><img src="/images/dineInLogo.png" alt="Dine In Logo" width="100px" height="100px"></a>
-        <hr>
+        <a class="logo_img" href="/index.ejs"><img src="/images/dineInLogo.png" alt="Dine In Logo" width="100px" height="100px"></a>
+        
+        <div class="navigation_links">
             <a class="Recipe_Link" href="#"> Recipes </a>
             <a class="Information_Link" href="/info.ejs"> Information </a>
             <a class="Blog_Link" href="#"> Blog </a>
-        <hr/>
+        </div>
     </div>
 </body>
 </html>
