@@ -3,6 +3,8 @@ const express = require('express');
 const  ejs = require("ejs"); // This is the view engine
 //Initializing:
 var app = express();
+// Database:
+const pool = require("./usersdb") // Name change?
 // Settings:
 app.set('view engine', 'ejs');
 app.use(express.static('public')); // Render static files 
