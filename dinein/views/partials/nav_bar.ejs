@@ -1,43 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dine In</title>
     <style>
+      @import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+      /* Source: Florin Pop https://codepen.io/FlorinPop17/pen/vPKWjd */
 
-        @import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
-        /* Source: Florin Pop https://codepen.io/FlorinPop17/pen/vPKWjd */
+      .navigation_bar {
+        /* background-color: #ffffff; */
+        margin: -8px -8px 0px -8px;
+        display: flex;
+        flex-direction: row;
+        /* align-content: center; */
+        align-items: center;
+      }
 
-        .navigation_bar {
-            background-color: #ffffff;
-            margin: -8px -8px 0px -8px;
-            display: flex;
-            flex-direction: row;
-            /* align-content: center; */
-            align-items: center;
-        }
-        .navigation_links a {
-            padding-left: 20em;
-            color: #26ab7b;
-            text-decoration: none;
-            font-family: "Montserrat", sans-serif;
-            font-size: 18px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
+      ul {
+        font-family: "Montserrat", sans-serif;
+        width: 100%;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        text-decoration: none;
+        font-family: "Montserrat", sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        padding-right: 10px;
+      }
+      li {
+        float: right;
+      }
+      li a {
+        display: block;
+        color: #26ab7b;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      li a:hover {
+        background-color: #111;
+        color: white;
+      }
+      li a,
+      .dropbtn {
+        display: inline-block;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover,
+      .dropdown:hover .dropbtn {
+        background-color: white;
+        color: #26ab7b;
+      }
+
+      li.dropdown {
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content a {
+        color: #26ab7b;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="navigation_bar">
-        <a class="logo_img" href="/index.ejs"><img src="/images/dineInLogo.png" alt="Dine In Logo" width="100px" height="100px"></a>
-        
-        <div class="navigation_links">
-            <a class="Recipe_Link" href="#"> Recipes </a>
-            <a class="Information_Link" href="/info.ejs"> Information </a>
-            <a class="Blog_Link" href="#"> Blog </a>
-        </div>
+      <a class="logo_img" href="/index.ejs"
+        ><img
+          src="/images/dineInLogoTransparent.png"
+          alt="Dine In Logo"
+          width="100px"
+          height="100px"
+      /></a>
+
+      <ul>
+        <li><a class="Information_Link" href="/info.ejs"> Team </a></li>
+        <li><a class="Blog_Link" href="#"> Blog </a></li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Recipes</a>
+          <div class="dropdown-content">
+            <a href="#">Breakfast</a>
+            <a href="#">Lunch</a>
+            <a href="#">Dinner</a>
+          </div>
+        </li>
+      </ul>
     </div>
-</body>
+  </body>
 </html>
