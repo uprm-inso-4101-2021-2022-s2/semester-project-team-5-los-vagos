@@ -11,7 +11,9 @@ app.use('/images',express.static('public/images'))
 app.use('/css',express.static('public/css'))
 
 // Port to listen to
-app.listen(8080);
+app.listen(8080, ()=>{
+    console.log("Listening on port: 8080");
+});
 // Routes:
 
 app.get('',(req,res) =>{
