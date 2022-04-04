@@ -1,5 +1,6 @@
-// Since this connects to jsu the db, rename file to:
-// db.js
+/* 
+ Tjis files handles the database connection.
+*/
 const Pool = require('pg').Pool
 const pool = new Pool(
     {
