@@ -14,6 +14,7 @@ queries
 https://www.youtube.com/watch?v=_Mun4eOOf2Q
 
 #### psql session
+29/23
 https://www.youtube.com/watch?v=vxu1RrR0vbw
 
 ### Authentication
