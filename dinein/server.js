@@ -1,7 +1,11 @@
+// Enviroment variables
+//const PORT = process.env.PORT || 8080
+
 // Load node modules
 const express = require('express');
 const  ejs = require("ejs"); // This is the view engine
-const session = require('express-session'); // Auth
+const session = require('express-session'); // Express session
+const pgSession = require('connect-pg-simple')(session); // Auth interactions?
 //Initializing:
 var app = express();
 // Database:
@@ -30,14 +34,30 @@ app.get('/',(req,res) =>{
     
     res.render('pages/index')
 });
-// Sign up
-app.get('/signup',(req,res) =>{
-    res.render('pages/signup')
+app.post('/', (req,res)=>{
+    // Handle post, remember there may be two possble posts
 });
-app.get('/signup',(req,res) =>{
-    res.render('pages/signup')
+// Sign up handled in /
+// app.get('/signup',(req,res) =>{
+//     res.render('pages/signup')
+// });
+app.post('/signup',(req,res) =>{
+    res.send("signup");
 });
 // Sign in / Log in
+// app.get('/signin',(req,res) =>{
+//     res.render('pages/signin');
+// });
+app.post('/signin',(req,res) =>{
+    res.send("signin");
+});
+// Main
+// TODO View recipes
+// TODO Post Recipe
+// TODO Modify Recipe
+// TODO Delete Recipe
+
+// Info route
 app.get('/info',(req,res) =>{
     res.render('pages/info')
 });

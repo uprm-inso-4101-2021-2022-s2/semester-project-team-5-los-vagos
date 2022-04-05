@@ -30,20 +30,34 @@
     <section class="registration">
       <div class="container" id="container">
         <div class="form-container sign-up-container">
-          <form action="#">
+          <form action="/signup" method="POST">
             <h1>Create Account</h1>
-            <input type="username" placeholder="Username" />
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
+            <input 
+            type="username" 
+            placeholder="Username" 
+            required/>
+            <input 
+            type="email" 
+            placeholder="Email" 
+            required/>
+            <input 
+            type="password" 
+            placeholder="Password" 
+            required/>
             <button>Sign Up</button>
           </form>
         </div>
         <div class="form-container sign-in-container">
-          <form action="#">
+          <form action="/signin" method="POST">
             <h1>Sign in</h1>
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
-            <a href="#" class="smallText">Forgot your password?</a>
+            <input 
+            type="email" 
+            placeholder="Email" 
+            required/>
+            <input 
+            type="password" 
+            placeholder="Password" 
+            required/>
             <button>Sign In</button>
           </form>
         </div>
@@ -65,7 +79,10 @@
         </div>
       </div>
     </section>
-    <script>
+    <!-- I think this script code is handled by server --> 
+      <script>
+      // I think this part is handled by server:
+      
       const signUpButton = document.getElementById("signUp");
       const signInButton = document.getElementById("signIn");
       const container = document.getElementById("container");
@@ -78,5 +95,7 @@
         container.classList.remove("right-panel-active");
       });
     </script>
+  
+    
   </body>
 </html>
