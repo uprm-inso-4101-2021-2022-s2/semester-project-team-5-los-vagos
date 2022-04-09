@@ -16,7 +16,7 @@
         flex-direction: row;
         /* align-content: center; */
         align-items: center;
-        
+
         justify-content: space-between;
       }
 
@@ -53,7 +53,7 @@
       }
       li a:hover {
         background-color: #111;
-        color: white;
+        color: #f1f1f1;
       }
       li a,
       .dropbtn {
@@ -65,7 +65,7 @@
 
       li a:hover,
       .dropdown:hover .dropbtn {
-        background-color: white;
+        background-color: #f9f9f9;
         color: #26ab7b;
       }
 
@@ -98,7 +98,7 @@
         display: block;
       }
 
-      @media (max-width:35em){
+      @media (max-width: 35em) {
         ul {
           display: flex;
           position: fixed;
@@ -112,7 +112,7 @@
           transition: transform 350ms ease-out;
         }
 
-        @supports (backdrop-filter: blur(1rem)){
+        @supports (backdrop-filter: blur(1rem)) {
           ul {
             background: hsl(0 0% 100% / 0.1);
             backdrop-filter: blur(3rem);
@@ -140,12 +140,11 @@
           border: 0;
         }
 
-        .mobile-nav-toggle[data-visible="true"]{
+        .mobile-nav-toggle[data-visible="true"] {
           background-image: url("images/menu-close.png");
         }
       }
     </style>
-    
   </head>
   <body>
     <div class="navigation_bar">
@@ -153,8 +152,8 @@
         ><img
           src="/images/dineInLogoTransparent.png"
           alt="Dine In Logo"
-          width="100px"
-          height="100px"
+          width="120px"
+          height="120px"
       /></a>
 
       <button class="mobile-nav-toggle" data-visible="false"></button>
@@ -174,13 +173,13 @@
     </div>
 
     <script>
-      const linkList =  document.querySelector(".link-list");
+      const linkList = document.querySelector(".link-list");
       const navToggle = document.querySelector(".mobile-nav-toggle");
-  
-      navToggle.addEventListener('click', ()=>{
+
+      navToggle.addEventListener("click", () => {
         const visibility = linkList.getAttribute("data-visible");
 
-        if(visibility === "false"){
+        if (visibility === "false") {
           linkList.setAttribute("data-visible", true);
           navToggle.setAttribute("data-visible", true);
         } else {
@@ -189,7 +188,5 @@
         }
       });
     </script>
-
   </body>
-  
 </html>
