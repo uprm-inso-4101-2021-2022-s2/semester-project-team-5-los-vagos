@@ -12,6 +12,7 @@ var app = express();
 const pool = require("./db")
 // Settings:
 app.set('view engine', 'ejs'); // setting view engine to ejs
+app.use(express.urlencoded({extended:false})); // Allows to send details from front-end to server
 app.use(session({
     secret: "key that will sign the cookie",
     resave: false, // create new user for evey request
@@ -34,22 +35,37 @@ app.get('/',(req,res) =>{
     
     res.render('pages/index')
 });
-app.post('/', (req,res)=>{
-    // Handle post, remember there may be two possble posts
+
+
+app.post('/signup',async (req,res) =>{
+    let{email, password} = req.body; // THis worked after adding name and id attributes to their respective input tags
+    res.send(`signup usr name: ${email} and psswd : ${password}`);
+    let errors = [];
+    process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+    pool.pool.query("INSERT INTO users (usr_name, usr_password) VALUES($1, $2)",[email,password], (err, results) => {
+        if (err) {
+            console.log(err);
+            throw err;
+        }
+        // The code bellow probably cannot coexist with res.send();
+    // res.json(results.rows);
+    });
+    // TODO check email being unique, and check password not empty, maybe add a confirm password option.
+    // If email or password bad then re-render the page with erros
+    // if errors.length > 0
+    // res.render("/", errors);
+    // If email good, password good then redirect to main
 });
-// Sign up handled in /
-// app.get('/signup',(req,res) =>{
-//     res.render('pages/signup')
-// });
-app.post('/signup',(req,res) =>{
-    res.send("signup");
-});
-// Sign in / Log in
-// app.get('/signin',(req,res) =>{
-//     res.render('pages/signin');
-// });
+
 app.post('/signin',(req,res) =>{
-    res.send("signin");
+    let{email, password} = req.body; // THis worked after adding name and id attributes to their respective input tags
+    res.send(`signup usr name: ${email} and psswd : ${password}`);
+    let errors = [];
+    // TODO check email being unique, and check password not empty, maybe add a confirm password option.
+    // If email or password bad then re-render the page with erros
+    // if errors.length > 0
+    // res.render("/", errors);
+    // If email good, password good then redirect to main
 });
 // Main
 // TODO View recipes
