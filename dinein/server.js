@@ -38,17 +38,30 @@ app.get('/',(req,res) =>{
 
 
 app.post('/signup',async (req,res) =>{
-    let{email, password} = req.body; // THis worked after adding name and id attributes to their respective input tags
-    res.send(`signup usr name: ${email} and psswd : ${password}`);
+    let{email, password} = req.body; // This worked after adding name and id attributes to their respective input tags
+    //res.send(`signup usr name: ${email} and psswd : ${password}`);
     let errors = [];
-    process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+    process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'; // allows for unsafe operations, like using a db apparently...
+    pool.pool.query("SELECT * FROM users WHERE  usr_name=$1",[email],
+     (err, results)=>{
+        if(err){
+            throw err;
+        }
+        console.log(results.rows)
+        if(results.rows.length>0){
+            errors.push({ mesaage: "Email already registered!"});
+            res.render("/",{errors});
+        }
+    });
+    // If email not registered already
     pool.pool.query("INSERT INTO users (usr_name, usr_password) VALUES($1, $2)",[email,password], (err, results) => {
         if (err) {
             console.log(err);
             throw err;
         }
-        // The code bellow probably cannot coexist with res.send();
+    // The code bellow probably cannot coexist with res.send();
     // res.json(results.rows);
+    //console.log(req.body);
     });
     // TODO check email being unique, and check password not empty, maybe add a confirm password option.
     // If email or password bad then re-render the page with erros
@@ -59,9 +72,26 @@ app.post('/signup',async (req,res) =>{
 
 app.post('/signin',(req,res) =>{
     let{email, password} = req.body; // THis worked after adding name and id attributes to their respective input tags
-    res.send(`signup usr name: ${email} and psswd : ${password}`);
+    let password_db;
+    // res.send(`signup usr name: ${email} and psswd : ${password}`);
     let errors = [];
-    // TODO check email being unique, and check password not empty, maybe add a confirm password option.
+    process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'; // allows for unsafe operations, like using a db apparently...
+    pool.pool.query("SELECT * FROM users WHERE  usr_name=$1",[email],
+    (err,results)=>{
+        if(err){
+            throw err;
+        }
+        console.log(results.rows[0]);
+        // Verify password:
+        password_db = results.rows[0]["usr_password"];
+        console.log(password_db);
+        if(password_db==password){
+            res.send("passwords match!");
+        } else{
+            res.send("passwords do not match!");
+        }
+        
+    });
     // If email or password bad then re-render the page with erros
     // if errors.length > 0
     // res.render("/", errors);
