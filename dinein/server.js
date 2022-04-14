@@ -91,4 +91,6 @@ app.post('route', async (req, res)=>{
 
 route/:id
 const {id}req.params;
+
+make the params optional by toute/param1?/:param2
 */
