@@ -14,7 +14,7 @@ queries
 https://www.youtube.com/watch?v=_Mun4eOOf2Q
 
 #### psql session
-53/10
+56/42
 https://www.youtube.com/watch?v=vxu1RrR0vbw
 
 ### Authentication
