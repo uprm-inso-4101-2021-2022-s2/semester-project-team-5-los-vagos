@@ -21,7 +21,7 @@ queries
 https://www.youtube.com/watch?v=_Mun4eOOf2Q
 
 #### psql session
-56/42
+1/20/11
 https://www.youtube.com/watch?v=vxu1RrR0vbw
 Lot of the funny stuff regarding sessions happened at about the 1hr mark of the video.
 
