@@ -7,6 +7,9 @@ The credentials may change for the db connections.
 npm run dev
 npm run script_name
 
+Yes, wierd signup to signin behavior. I just want to focus on gettinghtis this to work.
+Then I'll make it pretty and organized.
+
 
 ### Videos
 queries
@@ -25,3 +28,8 @@ a cookie is created when a session var is modified, this id is shared between br
 
 mongo session
 https://www.youtube.com/watch?v=TDe7DRYK8vU
+
+# TODO
+I know i have flooded this repo with TODOs 
+(I just want an easy way to look for what to do for the next steps).
+Remember to use th errors list variable inside the ejs files!

@@ -34,6 +34,17 @@
           </div>
         </div>
     </section>
+    <ul>
+      <!-- TODO add the errors lop here? -->
+      <% if (locals.errors) { %>
+        <% errors.forEach(msg => { %>
+          <li><%= msg.message %> </li>
+        <% }) %>
+      <% } %>
+    <% if (messages.success_msg) { %>
+      <li><%= messages.success_msg %></li>
+    <% } %>
+  </ul>
     <section class="registration">
       <div class="container" id="container">
         <div class="form-container sign-up-container">
