@@ -6,3 +6,4 @@
 ----------------------
 04/12/2022:
 - Database interaction succesful.
+- Passport authentication now working.

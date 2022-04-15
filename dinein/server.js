@@ -3,9 +3,13 @@
 
 // Load node modules
 const express = require('express');
-const  ejs = require("ejs"); // This is the view engine
+const ejs = require("ejs"); // This is the view engine
 const session = require('express-session'); // Express session
 const flash = require("express-flash");
+const passport = require('passport');
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'; // allows for unsafe operations, like using a db apparently...
+const initializePassport = require('./passportConfig');
+initializePassport(passport);
 // const pgSession = require('connect-pg-simple')(session); // Auth interactions?
 //Initializing:
 var app = express();
@@ -19,6 +23,8 @@ app.use(session({
     resave: false, // create new user for evey request
     saveUninitialized: false // If no modification done, then do not save
 })); 
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(flash());// That's it?! huh...
 app.use(express.static('public')); // Render static files 
                                    // (static files belong in the public dir)
@@ -39,7 +45,7 @@ app.get('/',(req,res) =>{
 });
 
 
-app.post('/signup',async (req,res) =>{
+app.post('/signup',(req,res) =>{
     let{email, password} = req.body; // This worked after adding name and id attributes to their respective input tags
     //res.send(`signup usr name: ${email} and psswd : ${password}`);
     let errors = [];
@@ -54,11 +60,10 @@ app.post('/signup',async (req,res) =>{
             errors.push({ message: "Email already registered!"});
             res.render("pages/index",{errors});
         } else {
-            // If email not registered already
+            // If email not registered
             pool.pool.query("INSERT INTO users (usr_name, usr_password) VALUES($1, $2) RETURNING usr_id, usr_password",[email,password], 
             (err, results) => {
                 if (err) {
-                    console.log(err);
                     throw err;
                 }
                 console.log(results.rows);
@@ -78,13 +83,27 @@ app.post('/signup',async (req,res) =>{
     // res.render("/", errors);
     // If email good, password good then redirect to main
 });
+// Main
+// TODO View recipes
+// TODO Post Recipe
+// TODO Modify Recipe
+// TODO Delete Recipe
+app.get("/main",(req,res)=>{
+    res.render("pages/main");
+});
 
+
+app.post("/signin",passport.authenticate('local', {
+    successRedirect: "/main",
+    failureRedirect: "/",
+    failureFlash: true
+}));
 app.post('/signin',(req,res) =>{
     let{email, password} = req.body; // THis worked after adding name and id attributes to their respective input tags
     let password_db;
     // res.send(`signup usr name: ${email} and psswd : ${password}`);
     let errors = [];
-    process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'; // allows for unsafe operations, like using a db apparently...
+    
     pool.pool.query("SELECT * FROM users WHERE  usr_name=$1",[email],
     (err,results)=>{
         if(err){
@@ -108,16 +127,12 @@ app.post('/signin',(req,res) =>{
     // res.render("/", errors);
     // If email good, password good then redirect to main
 });
-// Main
-// TODO View recipes
-// TODO Post Recipe
-// TODO Modify Recipe
-// TODO Delete Recipe
 
 // Info route
 app.get('/info',(req,res) =>{
     res.render('pages/info')
 });
+
 
 /*
 app.post('route', async (req, res)=>{

@@ -15,3 +15,5 @@
 ----------------------
 04/15/2022:
 - prevented users from registering twice
+- made db interactions doable, global scope
+- passport authntication now working

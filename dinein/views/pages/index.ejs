@@ -35,7 +35,7 @@
         </div>
     </section>
     <ul>
-      <!-- TODO add the errors lop here? -->
+      <!-- locals.var to avoid using unpretty typeof ;) -->
       <% if (locals.errors) { %>
         <% errors.forEach(msg => { %>
           <li><%= msg.message %> </li>
@@ -43,6 +43,9 @@
       <% } %>
     <% if (messages.success_msg) { %>
       <li><%= messages.success_msg %></li>
+    <% } %>
+    <% if (messages.error) { %>
+      <li><%= messages.error %> </li>
     <% } %>
   </ul>
     <section class="registration">
