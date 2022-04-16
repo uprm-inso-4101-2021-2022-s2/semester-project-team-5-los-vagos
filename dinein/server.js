@@ -89,9 +89,15 @@ app.post('/signup',(req,res) =>{
 // TODO Modify Recipe
 // TODO Delete Recipe
 app.get("/main",(req,res)=>{
-    res.render("pages/main");
+    // since i chose to use emails as the usernames, I can use the line bellow to only show the text before the @ and make more username like
+    res.render("pages/main", {username: req.user.usr_name}); // req.user.name, in our case req.user.usr_name since user has the same attribute names as the database!
 });
 
+app.post("/logout",(req,res)=>{
+    req.logOut();
+    req.flash("success_msg", "You have logged out!");
+    res.redirect('/');
+});
 
 app.post("/signin",passport.authenticate('local', {
     successRedirect: "/main",
@@ -133,7 +139,19 @@ app.get('/info',(req,res) =>{
     res.render('pages/info')
 });
 
+function checkAuthenticated(req,res,next){ // This may go as middleware for login and signup
+    if(req.isAuthenticated()){
+        res.redirect("/main");
+    }
+    next();
+}
 
+function checkNotAuthemticated(req,res,nex){ // THis may go in the mian page
+    if(req.isAuthenticated()){
+        return next();
+    }
+    res.redirect('/');
+}
 /*
 app.post('route', async (req, res)=>{
     try{

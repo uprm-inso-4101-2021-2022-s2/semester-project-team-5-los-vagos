@@ -7,7 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- Addnav or menu to post a recipe, logout -->
+    <form action="/logout" method="POST">
+        <button>Logout</button>
+    </form>
+    <% if (username) { %>
+     <h1><%= username %> </h1>
+    <% } %>
+    <!-- Add nav or menu to post a recipe, logout -->
     something
 </body>
 </html>

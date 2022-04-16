@@ -1,3 +1,4 @@
 - 04/03/2022 - database tables done
 - 04/12/2022 - database interaction succesful(working)
 - 04/15/2022 - prevented users from registering twice, passport authentication working
+- 04/16/2022 - logout now possible

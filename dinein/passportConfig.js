@@ -13,7 +13,8 @@ function initialize(passport){
                 }
                 console.log(results.rows);
                 if(results.rows.length>0){ // If user in our database
-                    const user = results.rows[0] // Pass the user object
+                    const user = results.rows[0] // Pass the db user object to user variable
+                    // now the attributes of user are the smae as the database ones.
                     console.log(user);
                     // Verifyy password:
                     if(password==user.usr_password){
@@ -29,8 +30,8 @@ function initialize(passport){
     }
     passport.use(
         new LocalStrategy({
-                usernameField: "email",
-                passwordField: "password"
+                usernameField: "email", // email in the html form
+                passwordField: "password" // password in the html form
             }, 
             authenticateUser
         )

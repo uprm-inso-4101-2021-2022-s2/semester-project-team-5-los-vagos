@@ -17,3 +17,6 @@
 - prevented users from registering twice
 - made db interactions doable, global scope
 - passport authntication now working
+----------------------
+04/16/2022:
+- logout done
