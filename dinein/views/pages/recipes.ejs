@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dine In</title>
+    <link rel="stylesheet" href="/css/recipes.css" />
+  </head>
+  <body>
+    <div>
+      <%- include('../partials/nav_bar.ejs') %>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt animi
+        voluptatem deleniti, cupiditate obcaecati illo, molestiae beatae ex
+        repellendus voluptate hic non? Libero accusantium excepturi maxime
+        tempora minus ipsa ipsam quos laboriosam adipisci, sunt esse praesentium
+        accusamus incidunt hic id nulla. Odit quisquam maxime ipsum repellat
+        dicta consequuntur similique soluta.
+      </p>
+    </div>
+    <section class="recipe-center">
+      <div class="container">
+        <input type="radio" id="All" name="categories" value="All" checked />
+        <input type="radio" id="Articles" name="categories" value="Articles" />
+        <input type="radio" id="Snacks" name="categories" value="Snacks" />
+        <input type="radio" id="Dessert" name="categories" value="Dessert" />
+        <input type="radio" id="Dinner" name="categories" value="Dinner" />
+        <input type="radio" id="Lunch" name="categories" value="Lunch" />
+        <input
+          type="radio"
+          id="Breakfast"
+          name="categories"
+          value="Breakfast"
+        />
+
+        <ol class="filters">
+          <li>
+            <label for="All">All</label>
+          </li>
+          <li>
+            <label for="Articles">Articles</label>
+          </li>
+          <li>
+            <label for="Snacks">Snacks</label>
+          </li>
+          <li>
+            <label for="Dessert">Dessert</label>
+          </li>
+          <li>
+            <label for="Dinner">Dinner</label>
+          </li>
+          <li>
+            <label for="Lunch">Lunch</label>
+          </li>
+          <li>
+            <label for="Breakfast">Breakfast</label>
+          </li>
+        </ol>
+
+        <ol class="posts">
+          <li class="post" data-category="Lunch Snacks">
+            <article>
+              <figure>
+                <a href="" target="_blank">
+                  <img src="images/food/ramen1.png" alt="" />
+                </a>
+                <figcaption>
+                  <ol class="post-categories">
+                    <li>
+                      <a href="">Lunch</a>
+                    </li>
+                    <li>
+                      <a href="">Snacks</a>
+                    </li>
+                  </ol>
+                  <h2 class="post-title">
+                    <a href="" target="_blank">5 Recipes Under $5 </a>
+                  </h2>
+                </figcaption>
+              </figure>
+            </article>
+          </li>
+          <li class="post" data-category="Dinner Lunch">
+            <article>
+              <figure>
+                <a href="" target="_blank">
+                  <img src="images/food/ramen1.png" alt="" />
+                </a>
+                <figcaption>
+                  <ol class="post-categories">
+                    <li>
+                      <a href="">Dinner</a>
+                    </li>
+                    <li>
+                      <a href="">Lunch</a>
+                    </li>
+                  </ol>
+                  <h2 class="post-title">
+                    <a href="" target="_blank">10 Recipes Under $10 </a>
+                  </h2>
+                </figcaption>
+              </figure>
+            </article>
+          </li>
+          <li class="post" data-category="Breakfast Snacks">
+            <article>
+              <figure>
+                <a href="" target="_blank">
+                  <img src="images/food/ramen1.png" alt="" />
+                </a>
+                <figcaption>
+                  <ol class="post-categories">
+                    <li>
+                      <a href="">Breakfast</a>
+                    </li>
+                    <li>
+                      <a href="">Snacks</a>
+                    </li>
+                  </ol>
+                  <h2 class="post-title">
+                    <a href="" target="_blank"
+                      >5 Ways to Spice Up Your Ramen
+                    </a>
+                  </h2>
+                </figcaption>
+              </figure>
+            </article>
+          </li>
+          <li class="post" data-category="Dessert Lunch">
+            <article>
+              <figure>
+                <a href="" target="_blank">
+                  <img src="images/food/ramen1.png" alt="" />
+                </a>
+                <figcaption>
+                  <ol class="post-categories">
+                    <li>
+                      <a href="">Snacks</a>
+                    </li>
+                    <li>
+                      <a href="">Dessert</a>
+                    </li>
+                  </ol>
+                  <h2 class="post-title">
+                    <a href="" target="_blank">Lorem Ipsum </a>
+                  </h2>
+                </figcaption>
+              </figure>
+            </article>
+          </li>
+          <li class="post" data-category="Dessert">
+            <article>
+              <figure>
+                <a href="" target="_blank">
+                  <img src="images/food/ramen1.png" alt="" />
+                </a>
+                <figcaption>
+                  <ol class="post-categories">
+                    <li>
+                      <a href="">Dessert</a>
+                    </li>
+                  </ol>
+                  <h2 class="post-title">
+                    <a href="" target="_blank">Lorem Ipsum </a>
+                  </h2>
+                </figcaption>
+              </figure>
+            </article>
+          </li>
+          <li class="post" data-category="Lunch">
+            <article>
+              <figure>
+                <a href="" target="_blank">
+                  <img src="images/food/ramen1.png" alt="" />
+                </a>
+                <figcaption>
+                  <ol class="post-categories">
+                    <li>
+                      <a href="">Lunch</a>
+                    </li>
+                  </ol>
+                  <h2 class="post-title">
+                    <a href="" target="_blank">Lorem Ipsum</a>
+                  </h2>
+                </figcaption>
+              </figure>
+            </article>
+          </li>
+          <li class="post" data-category="Breakfast">
+            <article>
+              <figure>
+                <a href="" target="_blank">
+                  <img src="images/food/ramen1.png" alt="" />
+                </a>
+                <figcaption>
+                  <ol class="post-categories">
+                    <li>
+                      <a href="">Breakfast</a>
+                    </li>
+                  </ol>
+                  <h2 class="post-title">
+                    <a href="" target="_blank">Lorem Ipsum </a>
+                  </h2>
+                </figcaption>
+              </figure>
+            </article>
+          </li>
+          <li class="post" data-category="Breakfast Snacks">
+            <article>
+              <figure>
+                <a href="" target="_blank">
+                  <img src="images/food/ramen1.png" alt="" />
+                </a>
+                <figcaption>
+                  <ol class="post-categories">
+                    <li>
+                      <a href="">Breakfast</a>
+                    </li>
+                    <li>
+                      <a href="">Snacks</a>
+                    </li>
+                  </ol>
+                  <h2 class="post-title">
+                    <a href="" target="_blank">Lorem Ipsum </a>
+                  </h2>
+                </figcaption>
+              </figure>
+            </article>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </body>
+</html>

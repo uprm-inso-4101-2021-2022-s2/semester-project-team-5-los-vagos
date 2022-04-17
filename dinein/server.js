@@ -139,6 +139,11 @@ app.get('/info',(req,res) =>{
     res.render('pages/info')
 });
 
+// Recipes route
+app.get('/recipes',(req,res) =>{
+    res.render('pages/recipes')
+});
+
 function checkAuthenticated(req,res,next){ // This may go as middleware for login and signup
     if(req.isAuthenticated()){
         res.redirect("/main");

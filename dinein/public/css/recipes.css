@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+
+:root {
+    --black: #3a3a3a;
+    --white: #fff;
+    --green: #49b293;
+}
+   
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+  
+ol {
+    list-style: none;
+}
+  
+a {
+    text-decoration: none;
+    color: inherit;
+    font-family: "Montserrat", sans-serif;
+}
+
+p {
+    font-family: "Montserrat", sans-serif;
+}
+   
+.recipe-center {
+    padding: 1.5rem;
+}
+  
+.container {
+    width: 100%;
+    margin: 0;
+    align-items: center;
+}
+  
+input[type="radio"] {
+    position: absolute;
+    left: -9999px;
+}
+  
+.filters {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 30px;
+    font-family: "Montserrat", sans-serif;
+    padding-right: 28%;
+}
+  
+.filters * {
+    display: inline-block;
+}
+  
+.filters label {
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.25rem;
+    border-radius: 2rem;
+    min-width: 50px;
+    line-height: normal;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+  
+.filters label:hover {
+    background: var(--green);
+    color: var(--white);
+}
+  
+/* Posts –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.posts {
+    display: grid;
+    grid-gap: 1.5rem;
+    grid-template-columns: repeat(4, 1fr);
+    padding-left: 0%;
+}
+  
+.posts .post {
+    background: #fafafa;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+  
+.posts .post-title {
+    font-size: 20px;
+    margin-bottom: 0%;
+    color: black !important;
+}
+  
+.posts .post-title:hover {
+    text-decoration: underline;
+}
+  
+.posts figcaption {
+    padding: 1rem;
+}
+  
+.posts .post-categories {
+    margin-bottom: 0.75rem;
+    font-size: 12px;
+}
+  
+.posts .post-categories * {
+    display: inline-block;
+}
+  
+.posts .post-categories li {
+    margin-bottom: 0.2rem;
+}
+  
+.posts .post-categories a {
+    padding: 0.2rem 0.5rem;
+    border-radius: 1rem;
+    border: 1px solid;
+    line-height: normal;
+    transition: all 0.1s;
+}
+  
+.posts .post-categories a:hover {
+    background: var(--green);
+    color: var(--white);
+}
+  
+[value="All"]:checked~.filters [for="All"],
+[value="Breakfast"]:checked~.filters [for="Breakfast"],
+[value="Lunch"]:checked~.filters [for="JLunch"],
+[value="Dinner"]:checked~.filters [for="Dinner"],
+[value="Snacks"]:checked~.filters [for="Snacks"],
+[value="Dessert"]:checked~.filters [for="Dessert"],
+[value="Articles"]:checked~.filters [for="Articles"] {
+    background: var(--green);
+    color: var(--white);
+}
+
+[value="All"]:checked~.posts [data-category] {
+    display: block;
+}
+
+[value="Breakfast"]:checked~.posts .post:not([data-category~="Breakfast"]),
+[value="Lunch"]:checked~.posts .post:not([data-category~="Lunch"]),
+[value="Dinner"]:checked~.posts .post:not([data-category~="Dinner"]),
+[value="Snacks"]:checked~.posts .post:not([data-category~="Snacks"]),
+[value="Dessert"]:checked~.posts .post:not([data-category~="Dessert"]),
+[value="Articles"]:checked~.posts .post:not([data-category~="Articles"]) {
+    display: none;
+}
+  
+  @media screen and (max-width: 900px) {
+    .posts {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 650px) {
+    html {
+        font-size: 14px;
+    }
+
+    .posts {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
