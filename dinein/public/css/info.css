@@ -1,0 +1,149 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+  
+.col-pic {
+  flex: 1 0 18%;
+  margin: 5px;
+  height: 150px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.col-name {
+  flex: 1 0 18%;
+  margin: 5px;
+  height: 35px;
+  color: #1e1e1e;
+  margin-top: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.col {
+  flex: 1 0 18%;
+  margin: 0px;
+  border-radius: 10px;
+  height: 30px;
+  color: #1e1e1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+}
+
+img {
+  height: 150px;
+  width: 150px;
+}
+
+p {
+  text-align: center;
+  padding-bottom: 5vh;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+
+.container-header {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Courier Prime", monospace; 
+  /* background-color: #fdfdfe; */
+  display: flex;
+  justify-content: center;
+  padding-top: 5vh ;
+  padding-bottom: 2vh;
+  align-items: center;
+}
+.header{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Courier Prime", monospace; 
+  display: inline-flex;
+}
+.header .fixed {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Courier Prime", monospace; 
+  font-size: 70px;
+  font-weight: 500;
+  color: #91d7c3;
+}
+.header .typed{
+  margin-left: 20px;
+  line-height: 90px;
+  height: 90px;
+  overflow: hidden;
+ 
+}
+.header .typed li{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Courier Prime", monospace; 
+  color: #26ab7b;
+  font-size: 70px;
+  font-weight: 600;
+  list-style: none;
+  animation: slide 4.5s steps(3) infinite;
+  position: relative;
+  top: 0;
+}
+@keyframes slide{
+  100%{
+    top: -360px;
+  }
+}
+.header .typed li span{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Courier Prime", monospace; 
+  position: relative;
+}
+.header .typed li span::before{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Courier Prime", monospace; 
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  border-left: 2px solid black;
+  /* background: #fdfdfe; */
+  background: white;
+  animation: cursor 1s infinite step-end, typing 1.5s steps(8) infinite;
+}
+@keyframes cursor{
+  0%, 100%{border-color: transparent;}
+  50%{border-color: black;}
+}
+@keyframes typing{
+  100%{ left: 8ch;}
+}
+@keyframes slide{
+  100%{top:-270px}
+  }

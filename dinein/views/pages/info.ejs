@@ -1,15 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dine In</title>
-</head>
-<body>
+    <link rel="stylesheet" href="/css/info.css" />
+  </head>
+  <body>
     <div>
-        <%- include('../partials/nav_bar.ejs') %>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt animi voluptatem deleniti, cupiditate obcaecati illo, molestiae beatae ex repellendus voluptate hic non? Libero accusantium excepturi maxime tempora minus ipsa ipsam quos laboriosam adipisci, sunt esse praesentium accusamus incidunt hic id nulla. Odit quisquam maxime ipsum repellat dicta consequuntur similique soluta.</p>
+      <%- include('../partials/nav_bar.ejs') %>
+
+      <container class="container-header"
+        ><div class="header">
+          <div class="fixed">Meet the</div>
+          <ul class="typed">
+            <li><span>Team</span></li>
+          </ul>
+        </div>
+      </container>
+
+      <p>
+        A group of five college students seeking to put an end to boring dishes.
+      </p>
+
+      <!-- Source for icons: Avatars created by rizal2109 - Flaticon -->
+      <div class="row">
+        <div class="col-pic">
+          <img src="/images/avatars/man2.png" alt="Avatar." />
+        </div>
+        <div class="col-pic">
+          <img src="/images/avatars/woman3.png" alt="Avatar." />
+        </div>
+        <div class="col-pic">
+          <img src="/images/avatars/man4.png" alt="Avatar." />
+        </div>
+        <div class="col-pic">
+          <img src="/images/avatars/woman1.png" alt="Avatar." />
+        </div>
+        <div class="col-pic">
+          <img src="/images/avatars/man3.png" alt="Avatar." />
+        </div>
+        <div class="col-name">Ernesto Montes</div>
+        <div class="col-name">Isabella Garrido</div>
+        <div class="col-name">James Rodriguez</div>
+        <div class="col-name">Dediriz Figueroa</div>
+        <div class="col-name">Jose Martinez</div>
+        <div class="col">Chef Level: Novice</div>
+        <div class="col">Chef Level: Novice</div>
+        <div class="col">Chef Level: Novice</div>
+        <div class="col">Chef Level: Novice</div>
+        <div class="col">Chef Level: Novice</div>
+        <!-- TODO: Add links to recipes. -->
+        <div class="col">Favorite Recipe: _______</div>
+        <div class="col">Favorite Recipe: _______</div>
+        <div class="col">Favorite Recipe: _______</div>
+        <div class="col">Favorite Recipe: _______</div>
+        <div class="col">Favorite Recipe: _______</div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
