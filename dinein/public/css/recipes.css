@@ -1,94 +1,120 @@
+:root {
+  --black: #3a3a3a;
+  --white: #fff;
+  --green: #49b293;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+ol {
+  list-style: none;
+}
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
 
-:root {
-    --black: #3a3a3a;
-    --white: #fff;
-    --green: #49b293;
-}
-   
-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-  
-ol {
-    list-style: none;
-}
-  
 a {
-    text-decoration: none;
-    color: inherit;
-    font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  color: inherit;
+  font-family: "Montserrat", sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+
+h1 {
+  text-align: center;
+  font-family: "Courier Prime", monospace;
+  font-weight: 500;
+  font-size: 60px;
+  font-weight: 500;
+  margin-bottom: 7px;
 }
 
 p {
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    font-weight: 100;
-    line-height: 20px;
-    letter-spacing: 0.5px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 20px;
+  letter-spacing: 0.5px;
 }
    
 .recipe-center {
-    padding: 1.5rem;
+  padding: 1.5rem;
 }
-  
+
 .container {
-    width: 100%;
-    margin: 0;
-    align-items: center;
+  width: 100%;
+  margin: 0;
+  align-items: center;
 }
-  
+
 input[type="radio"] {
-    position: absolute;
-    left: -9999px;
+  position: absolute;
+  left: -9999px;
 }
-  
+
 .filters {
-    text-align: center;
-    margin-bottom: 2rem;
-    padding-bottom: 30px;
-    font-family: "Montserrat", sans-serif;
-    padding-right: 28%;
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 30px;
+  font-family: "Montserrat", sans-serif;
+  padding-right: 28%;
 }
   
 .filters * {
-    display: inline-block;
+  display: inline-block;
 }
-  
+
 .filters label {
-    padding: 0.5rem 1rem;
-    margin-bottom: 0.25rem;
-    border-radius: 2rem;
-    min-width: 50px;
-    line-height: normal;
-    cursor: pointer;
-    transition: all 0.1s;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.25rem;
+  border-radius: 2rem;
+  min-width: 50px;
+  line-height: normal;
+  cursor: pointer;
+  transition: all 0.1s;
 }
-  
+
 .filters label:hover {
-    background: var(--green);
-    color: var(--white);
+  background: var(--green);
+  color: var(--white);
 }
   
 /* Posts –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.posts {
-    display: grid;
-    grid-gap: 1.5rem;
-    grid-template-columns: repeat(4, 1fr);
-    padding-left: 0%;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
-  
+
+.posts {
+  display: grid;
+  gap: 1.0rem;
+  grid-template-columns: repeat(4, 1fr);
+  padding-left: 0%;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 .posts .post {
-    background: #fafafa;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 1em;
+  background: #ECE9E6;
+  background: linear-gradient(to right, #FFFFFF, #ECE9E6);
 }
   
 .posts .post-title {
-    font-size: 20px;
-    margin-bottom: 0%;
-    color: black !important;
+  font-size: 25px;
+  margin-bottom: 0px;
+  color: var(--green);
+  font-family: "Montserrat", sans-serif;
 }
   
 .posts .post-title:hover {
@@ -96,33 +122,41 @@ input[type="radio"] {
 }
   
 .posts figcaption {
-    padding: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
 }
   
 .posts .post-categories {
-    margin-bottom: 0.75rem;
-    font-size: 12px;
+  font-size: 12px;
+  margin-top: -5px;
+  align-self: flex-start;
 }
   
 .posts .post-categories * {
-    display: inline-block;
+  /* display: inline-block; */
+  /* align-self: flex-start; */
+  padding: .25em;
+  border-radius: 1em;
 }
   
 .posts .post-categories li {
-    margin-bottom: 0.2rem;
+  margin-bottom: 0rem;
 }
   
 .posts .post-categories a {
-    padding: 0.2rem 0.5rem;
-    border-radius: 1rem;
-    border: 1px solid;
-    line-height: normal;
-    transition: all 0.1s;
+  padding: 0.2rem 0.5rem;
+  border-radius: 1rem;
+  border: 1px solid;
+  line-height: normal;
+  transition: all 0.1s;
+  color: var(--black);
 }
   
 .posts .post-categories a:hover {
-    background: var(--green);
-    color: var(--white);
+  background: var(--green);
+  color: var(--white);
 }
   
 [value="All"]:checked~.filters [for="All"],
@@ -132,12 +166,12 @@ input[type="radio"] {
 [value="Snacks"]:checked~.filters [for="Snacks"],
 [value="Dessert"]:checked~.filters [for="Dessert"],
 [value="Articles"]:checked~.filters [for="Articles"] {
-    background: var(--green);
-    color: var(--white);
+  background: var(--green);
+  color: var(--white);
 }
 
 [value="All"]:checked~.posts [data-category] {
-    display: block;
+  display: block;
 }
 
 [value="Breakfast"]:checked~.posts .post:not([data-category~="Breakfast"]),
@@ -148,19 +182,56 @@ input[type="radio"] {
 [value="Articles"]:checked~.posts .post:not([data-category~="Articles"]) {
     display: none;
 }
+
+.post-body{
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.post-footer {
+  display: flex;
+  padding: 1rem;
+}
+
+/* Makes sure the profiles are aligned. */
+figure{
+  height: 475px;
+}
   
-  @media screen and (max-width: 900px) {
-    .posts {
-        grid-template-columns: repeat(3, 1fr);
-    }
+.user {
+  display: flex;
+  gap: .5rem;
+}
+
+h5 {
+  margin-top: 10px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.user-image {
+  height: 75px;
+  width: 75px;
+}
+
+.user-info>small {
+  color: #666;
+  font-family: "Montserrat", sans-serif;
+}
+  
+@media screen and (max-width: 900px) {
+  .posts {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media screen and (max-width: 650px) {
-    html {
-        font-size: 14px;
-    }
+  html {
+    font-size: 14px;
+  }
 
-    .posts {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .posts {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
