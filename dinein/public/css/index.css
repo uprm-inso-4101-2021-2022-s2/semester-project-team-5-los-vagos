@@ -5,7 +5,8 @@
 }
 section.top {
   display: grid;
-  grid-template-columns: repeat(2, 50%);
+  /* grid-template-columns: repeat(2, 50%); */
+  grid-template-columns:fit-content(100%);
   grid-template-areas: "info logo";
 }
 .infoPara {
@@ -19,7 +20,7 @@ section.top {
   grid-area: logo;
   
 }
-body {
+html, body {
   background: white;
 }
 
@@ -303,4 +304,44 @@ input {
 
 .container.right-panel-active .overlay-right {
   transform: translateX(20%);
+}
+
+@media(max-width:77.5em){
+
+  section.top {
+    grid-template-columns: 100%;
+    grid-template-areas: "info" "logo";
+  }
+  .infoPara {
+    font-family: "Montserrat", sans-serif;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+  .row{
+    padding-bottom: 40px;
+    width: 100%;
+    padding-left: 0;
+  }
+  h1 {
+    text-align: center;
+    padding-left: 0;
+  }
+  p {
+    text-align: center;
+    padding-left: 0;
+  }
+  .logoImg img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media(max-width: 35em){
+    .infoPara {
+      padding-top: 2em;
+    }
+    h1 {
+      font-size: 60px;
+    }
+  }
+
 }
