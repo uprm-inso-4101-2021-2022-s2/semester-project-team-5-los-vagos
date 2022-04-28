@@ -14,7 +14,7 @@ initializePassport(passport);
 //Initializing:
 var app = express();
 // Database:
-const pool = require("./db")
+const {pool} = require("./db")
 // Settings:
 app.set('view engine', 'ejs'); // setting view engine to ejs
 app.use(express.urlencoded({extended:false})); // Allows to send details from front-end to server
