@@ -1,0 +1,24 @@
+<!-- 
+    recipe_id SERIAL PRIMARY KEY,
+    recipe_name TEXT UNIQUE NOT NULL,
+    ingredients TEXT [], -- comma separated list of ingredients?
+    rating DECIMAL, -- 0-10 float rating from other users
+    creator_id INTEGER, -- the id referrence to the creator
+    steps TEXT,-- comma separated list of the steps?
+    FOREIGN KEY (creator_id) REFERENCES users (usr_id)
+ -->
+<form action="/post_recipe" method="POST">
+    <!-- name -->
+    <label for="recipeName">Name of Recipe</label> 
+    <input type="text" placeholder="Name of your recipe" id="recipeName" required>
+    <!-- ingredients -->
+    <label for="ingredients">Ingredients</label>
+     <input type="text" placeholder="comma separated list like: rice,chiken breast,..." id="ingredients" required>
+     <!-- steps -->
+     <label for="steps"></label>
+     <input type="text" placeholder="Steps to make recipe." id="steps" required>
+     <button>Post</button>
+</form>
+<form action="/main">
+    <button>Go Back</button>
+</form>

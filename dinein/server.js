@@ -152,6 +152,25 @@ app.get('/recipeTemplate',(req,res) =>{
     res.render('pages/recipeTemplate')
 });
 
+// Make Recipe
+/*
++ Render make recipe page(remember cancel and post button).
++ If cancel just redirect to main.
++ If post recipe, verify all 
+fields are filled(no default behaviur) and redirect to main.
+*/
+//app.get();
+
+// Edit Recipe
+/*
+Similar to Make Recipe but the fields will be prepopulated and
+the route willl have recipe id(or recipe id will passed to the method).
++ Query recipe info
++ Populate a similar page to makeRecipe
++ Provide Edit, delete and cancel button all redirect to main.
+
+*/
+
 function checkAuthenticated(req,res,next){ // This may go as middleware for login and signup
     if(req.isAuthenticated()){
         res.redirect("/main");
@@ -178,7 +197,7 @@ app.post('route', async (req, res)=>{
 });
 
 route/:id
-const {id}req.params;
+const {id}=req.params;
 
-make the params optional by toute/param1?/:param2
+make the params optional by route/param1?/:param2
 */

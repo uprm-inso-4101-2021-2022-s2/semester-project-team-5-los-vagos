@@ -16,7 +16,42 @@
     <% } %>
     <!-- TODO See if the logout button can be incorporated into the nav bar,
     or at least made to look like it is a part of the nav bar-->
-    something
-    <!-- Todo: Add post recipe button -->
+    
+    <form action="/make_recipe" method="GET">
+        <label for="mkRecipe">Make Recipe</label>
+        <input type="button" id="mkRecipe">
+    </form>
+
+    <div>
+        <section class="top">
+            <div class="recipeInfo">
+                <h1>Recipe Name</h1>
+                <div class="infoList">
+                    <p>Creator Name </p>
+                    <p>Time:</p>
+                    <p>Price:</p>
+                </div>
+            </div>
+            <div class="recipeImg">
+                <img src="images/food/ramen1.png" alt="" />
+            </div>
+        </section>
+        
+        <label for="">Ingredients</label>
+        <ul class="ingredientList">
+            <li>Ingredient 1</li>
+            <li>Ingredient 2</li>
+            <li>Ingredient 3</li>
+        </ul>
+        
+        <label for="">Steps</label>
+        <ol class="stepList">
+            <li>Step 1</li>
+            <li>Step 2</li>
+            <li>Step 3</li>
+        </ol>
+        <!-- append recipe ID to route -->
+        <form action="/edit_recipe/"></form>
+    </div>
 </body>
 </html>
