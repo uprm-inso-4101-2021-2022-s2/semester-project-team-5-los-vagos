@@ -7,13 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/logout" method="POST">
+    <div><%- include('../partials/nav_bar.ejs') %></div>
+    <% if (username) { %>
+     <a><%= username %> </a>
+     <form action="/logout" method="POST">
         <button>Logout</button>
     </form>
-    <% if (username) { %>
-     <h1><%= username %> </h1>
     <% } %>
-    <!-- Add nav or menu to post a recipe, logout -->
+    <!-- TODO See if the logout button can be incorporated into the nav bar,
+    or at least made to look like it is a part of the nav bar-->
     something
+    <!-- Todo: Add post recipe button -->
 </body>
 </html>

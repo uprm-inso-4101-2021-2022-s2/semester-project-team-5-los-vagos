@@ -14,7 +14,7 @@ initializePassport(passport);
 //Initializing:
 var app = express();
 // Database:
-const pool = require("./db")
+const {pool} = require("./db")
 // Settings:
 app.set('view engine', 'ejs'); // setting view engine to ejs
 app.use(express.urlencoded({extended:false})); // Allows to send details from front-end to server
@@ -88,8 +88,10 @@ app.post('/signup',(req,res) =>{
 // TODO Post Recipe
 // TODO Modify Recipe
 // TODO Delete Recipe
-app.get("/main",(req,res)=>{
+app.get("/main", checkNotAuthemticated,(req,res)=>{
     // since i chose to use emails as the usernames, I can use the line bellow to only show the text before the @ and make more username like
+    // Get recipes made by users or just recipes made by current user
+    // var latest_20_recipes = pool.pool.query
     res.render("pages/main", {username: req.user.usr_name}); // req.user.name, in our case req.user.usr_name since user has the same attribute names as the database!
 });
 
@@ -157,10 +159,11 @@ function checkAuthenticated(req,res,next){ // This may go as middleware for logi
     next();
 }
 
-function checkNotAuthemticated(req,res,nex){ // THis may go in the mian page
+function checkNotAuthemticated(req,res,next){ // THis may go in the mian page
     if(req.isAuthenticated()){
         return next();
     }
+    req.flash("error", "Please signin or signup.");
     res.redirect('/');
 }
 /*
