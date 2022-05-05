@@ -144,6 +144,12 @@ app.get('/recipes',(req,res) =>{
     res.render('pages/recipes')
 });
 
+
+// Recipe Template
+app.get('/recipeTemplate',(req,res) =>{
+    res.render('pages/recipeTemplate')
+});
+
 function checkAuthenticated(req,res,next){ // This may go as middleware for login and signup
     if(req.isAuthenticated()){
         res.redirect("/main");

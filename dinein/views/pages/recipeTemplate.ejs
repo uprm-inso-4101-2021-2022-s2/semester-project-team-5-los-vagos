@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dine In</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+
+        div {
+            font-family: "Montserrat", sans-serif;
+            padding-right: 20px;
+        }
+        section.top {
+            display: grid;
+            grid-template-columns: repeat(2, 50%);
+            grid-template-areas: "info img";
+        }
+
+        .recipeInfo {
+            grid-area: "info";
+            padding-right: 30px;
+            width: 100%
+        }
+
+        .recipeImg {
+            grid-area: "img";
+            justify-self: center;
+            object-fit: contain;
+        }
+
+        .infoList {
+            margin: 0;
+            padding-left: 55px; 
+            font-size: 18px;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 60px;
+            color: #26ab7b;
+            margin: 0;
+            padding-left: 5%;
+        }
+        label {
+            display: inline-block;
+            font-size: 25px;
+            font-weight: bold;
+            padding-left: 55px;
+            margin: 10px 0;
+        }
+        .ingredientList{
+            
+            display: flex;
+            flex-direction: column;
+            list-style-type: disc;
+            padding-left: 100px;
+
+            
+        }
+        .ingredientList li {
+            float: left;
+            font-weight: 100;
+            padding: 5px 0;
+        }
+        .stepList {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding-left: 100px;
+        }
+
+        .stepList li {
+            font-size: 18px;
+            padding: 10px 0;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <%- include('../partials/nav_bar.ejs') %>
+    <div>
+        <section class="top">
+            <div class="recipeInfo">
+                <h1>Recipe Name</h1>
+                <div class="infoList">
+                    <p>Creator Name </p>
+                    <p>Time:</p>
+                    <p>Price:</p>
+                </div>
+            </div>
+            <div class="recipeImg">
+                <img src="images/food/ramen1.png" alt="" />
+            </div>
+        </section>
+        
+        <label for="">Ingredients</label>
+        <ul class="ingredientList">
+            <li>Ingredient 1</li>
+            <li>Ingredient 2</li>
+            <li>Ingredient 3</li>
+        </ul>
+        
+        <label for="">Steps</label>
+        <ol class="stepList">
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ex, officia possimus optio magnam corporis ab consequatur repellendus doloremque atque inventore ea dolores. Inventore pariatur labore soluta quia dolore harum.</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, culpa eveniet. Impedit ab doloribus enim non nisi, minima in debitis ipsam aliquid molestias? Quaerat nemo numquam minima esse, repudiandae pariatur?</li>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda nihil eum tenetur aliquid non, porro dicta. Omnis dignissimos, optio aperiam illo libero magni obcaecati repellendus velit animi harum, explicabo nesciunt.</li>
+        </ol>
+    </div>
+
+</body>
+</html>
