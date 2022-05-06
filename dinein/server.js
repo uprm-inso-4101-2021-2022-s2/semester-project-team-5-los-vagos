@@ -50,7 +50,7 @@ app.post('/signup',(req,res) =>{
     //res.send(`signup usr name: ${email} and psswd : ${password}`);
     let errors = [];
     process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0'; // allows for unsafe operations, like using a db apparently...
-    pool.pool.query("SELECT * FROM users WHERE  usr_name=$1",[email],
+    pool.query("SELECT * FROM users WHERE  usr_name=$1",[email],
      (err, results)=>{
         if(err){
             throw err;
@@ -61,7 +61,7 @@ app.post('/signup',(req,res) =>{
             res.render("pages/index",{errors});
         } else {
             // If email not registered
-            pool.pool.query("INSERT INTO users (usr_name, usr_password) VALUES($1, $2) RETURNING usr_id, usr_password",[email,password], 
+            pool.query("INSERT INTO users (usr_name, usr_password) VALUES($1, $2) RETURNING usr_id, usr_password",[email,password], 
             (err, results) => {
                 if (err) {
                     throw err;
