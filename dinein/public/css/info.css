@@ -74,6 +74,7 @@ p {
   padding-bottom: 2vh;
   align-items: center;
 }
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
 .header{
   box-sizing: border-box;
   margin: 0;
@@ -81,6 +82,8 @@ p {
   font-family: "Courier Prime", monospace; 
   display: inline-flex;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
 .header .fixed {
   box-sizing: border-box;
   margin: 0;
@@ -97,6 +100,7 @@ p {
   overflow: hidden;
  
 }
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
 .header .typed li{
   box-sizing: border-box;
   margin: 0;
@@ -115,6 +119,7 @@ p {
     top: -360px;
   }
 }
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
 .header .typed li span{
   box-sizing: border-box;
   margin: 0;
@@ -122,6 +127,7 @@ p {
   font-family: "Courier Prime", monospace; 
   position: relative;
 }
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
 .header .typed li span::before{
   box-sizing: border-box;
   margin: 0;
